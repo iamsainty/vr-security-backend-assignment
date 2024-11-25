@@ -1,0 +1,22 @@
+{
+  "name": "vr-backend-assignment",
+  "version": "1.0.0",
+  "description": "This project is devloped as an assignment for VR security for showing the skills and work for the position of backend intern",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamsainty/vr-security-backend-assignment.git"
+  },
+  "author": "Priyanshu Chaurasiya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamsainty/vr-security-backend-assignment/issues"
+  },
+  "homepage": "https://github.com/iamsainty/vr-security-backend-assignment#readme",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
