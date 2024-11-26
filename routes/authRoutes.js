@@ -11,11 +11,24 @@ router.post("/register", async (req, res) => {
   try {
     const { name, email, password, role } = req.body;
 
+    // basic checks
+    if (!name || !email || !password || !role) {
+      return res.status(400).json({ message: "Please fill in all fields" });
+    }
+    // check valid role
+    if (role !== "admin" && role !== "moderator" && role !== "user") {
+      return res.json({ message: "Invalid role" });
+    }
+
     const user = await User.findOne({ email: email });
 
     if (user) {
       // if user already exists, return a message
-      return res.json({ success: false, message: "Email already exists", user });
+      return res.json({
+        success: false,
+        message: "Email already exists",
+        user,
+      });
     }
 
     // hashing the password for strengthening the security
@@ -47,6 +60,16 @@ router.post("/register", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
+
+    // basic checks
+    if (!email || !password) {
+      return res.status(400).json({ message: "Please fill in all fields" });
+    }
+    // check valid role
+    if (role !== "admin" && role !== "moderator" && role !== "user") {
+      return res.json({ message: "Invalid role" });
+    }
+
     const user = await User.findOne({ email: email });
 
     if (!user) {
