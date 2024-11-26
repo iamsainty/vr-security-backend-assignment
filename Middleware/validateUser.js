@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 
-const secretKey = process.env.SECRET - KEY || "secret-key";
+const secretKey = process.env.SECRET_KEY || "secret-key";
 
 const validateUser = (req, res, next) => {
   try {
@@ -28,3 +28,5 @@ const validateUser = (req, res, next) => {
     console.log('Error validating user:', error);
   }
 };
+
+module.exports = validateUser;
