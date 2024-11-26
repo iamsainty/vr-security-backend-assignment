@@ -118,7 +118,7 @@ Once you have the token from login or registration, you can use it to fetch user
 
 - **Endpoint**: `/get-details/admin-details`
 - **Method**: GET
-- **Authorization**: Bearer `<your-token>`
+- **Request header**: token : `<your-token>`
 
 If the token verifies the role as **admin**, you’ll get the admin’s data in the response. If not, you’ll get an error message.
 
@@ -126,7 +126,7 @@ If the token verifies the role as **admin**, you’ll get the admin’s data in 
 
 - **Endpoint**: `/get-details/moderator-details`
 - **Method**: GET
-- **Authorization**: Bearer `<your-token>`
+- **Request header**: token : `<your-token>`
 
 This works the same as the **admin** endpoint, but checks for the **moderator** role.
 
@@ -134,7 +134,7 @@ This works the same as the **admin** endpoint, but checks for the **moderator** 
 
 - **Endpoint**: `/get-details/user-details`
 - **Method**: GET
-- **Authorization**: Bearer `<your-token>`
+- **Request header**: token : `<your-token>`
 
 This will return the user’s data if the role is **user**.
 
