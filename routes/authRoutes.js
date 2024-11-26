@@ -11,11 +11,11 @@ router.post("/register", async (req, res) => {
   try {
     const { name, email, password, role } = req.body;
 
-    const user = await User.find({ email: email });
+    const user = await User.findOne({ email: email });
 
     if (user) {
       // if user already exists, return a message
-      return res.json({ success: false, message: "Email already exists" });
+      return res.json({ success: false, message: "Email already exists", user });
     }
 
     // hashing the password for strengthening the security
